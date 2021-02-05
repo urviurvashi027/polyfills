@@ -40,12 +40,9 @@ Array.prototype.eachEL = function(callback) {
     return result;
     }
 
-  // filter
-  // reduce
-
   // reverse
 
-  Array.prototype.revy = function(array){ 
+  Array.prototype.revy = function(){ 
     const ctx = this;
     const result = [];
     for (let index = ctx.length - 1; index >= 0; index--) {
@@ -56,12 +53,27 @@ Array.prototype.eachEL = function(callback) {
   }
 
   const array = ['blastoff', 1, 2, 3];
-
   const y = array.revy();
-
   console.log(y);
 
-  // join 
+  // join todo
+
+  Array.prototype.join = function(){ 
+    const ctx = this;
+    let args = arguments[0];
+    let string = "";
+    for (let index = 0; index < ctx.length; index++) {
+      string += (args) ? args+ctx[index] : ','+ctx[index];
+    }
+    return string.slice(1);
+  }
+ 
+  const array = ['blastoff', 1, 2, 3];
+  const y = array.join();
+  console.log(y);
+
+  // filter todo
+  // reduce todo
 
 
 
